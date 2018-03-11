@@ -1,0 +1,13 @@
+.panel{
+    background-color: #f4bad57f;
+    margin: auto;
+    text-align: center;
+    width: 30%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.integrantes{
+    margin: auto;
+    width: 35%;
+}
