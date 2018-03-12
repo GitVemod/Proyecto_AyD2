@@ -1,50 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-sm-2">
-      <h1>{{ nombreApp }}!</h1>
-    </div>
-  </div>
-  <div class="row justify-content-md-center">
-    <div class="col-sm-1">
-      <img width="100" alt="Angular Logo" src="https://www.naea.org.mx/images/theme-naea/icon-alcancia.png">
-    </div>
-  </div>
-  <div class="row justify-content-md-center">
-    <div class="col-sm-5">
-      <h2>Proyecto Analisis y diseño 2 </h2>
-      <h3>Integrantes Grupo 1</h3>
-    </div>
-  </div>
-  <div class="row justify-content-md-center">
-    <div class="col-sm-5">
-      <ul class="list-group list-group-flush">
-        <li *ngFor="let integrante of integrantes" class="list-group-item">
-          {{integrante}}
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="row justify-content-md-center">
-      <div class="col-sm-4">
-        <form (submit) = "iniciarSesion(correo, clave)">
-          <div class="form-group">
-            <input 
-            #correo
-            type="text"
-            placeholder="Correo"
-            class="form-control"/>
-          </div>
-          <div class="form-group">
-            <input
-            #clave
-            type="password"
-            placeholder="Contraseña"
-            class="form-control"/>
-          </div>
-          <button (click) = 'iniciarSesion()' class="btn btn-success btn-block">Iniciar sesion</button>
-          <a href="{{registrarse}}"><button class="btn btn-primary btn-block">Registrate</button></a>
-        </form>
-      </div>
-  </div>
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
 </div>

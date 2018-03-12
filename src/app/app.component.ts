@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { Usuario }  from './modelos/usuario';
+import { FbUsuarioServiceService } from './servicios/fb-usuario-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +10,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  nombreApp : string;
-  correo : string;
-  integrantes : string[];
-  registrarse : string;
+  
+  URLregistrarse : string;
 
-  constructor(){
-    this.nombreApp = 'Alcancia';
-    this.correo = 'grupo1@correo.com';
-    this.integrantes = ['Adrian', 'Jenny', 'Gilberto', 'Diego', 'Jorge'];
-    this.registrarse = "registrarse.html";
+  //usuarios en firebase
+  usuarios : Usuario[];
+
+  constructor(public registrarService : FbUsuarioServiceService){
+    
   }
+
+  ngOnInit(){
+    this.registrarService.getUsuarios().subscribe(usuarios => {
+      this.usuarios = usuarios;
+    })
+  }
+
+  agregarIntegrante(correo, clave){
+    // var integrante = { "nombre": correo, "clave": clave}
+    // this.db.database.ref('integrantes/' + Date.now()).set(integrante);
+  }
+
+  
 }

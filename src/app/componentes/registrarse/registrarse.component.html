@@ -1,0 +1,29 @@
+<br/>
+<div class="row justify-content-md-center">
+  <div class="col-sm-4">
+    <div class="card" style="width: 100%;">
+      <div class="card-body">
+        <h6 class="card-title">Registrar usuario</h6>
+        <form (ngSubmit) = "registrarUsuario()">
+          <div class="form-group">
+            <input type="text" placeholder="Nombres" class="form-control" name="nombres" [(ngModel)] = "usuario.nombres"/>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Apellidos" class="form-control" name="apellidos" [(ngModel)] = "usuario.apellidos"/>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Correo" class="form-control" name="correo" [(ngModel)] = "usuario.correo"/>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="CUI" class="form-control" name="cui" [(ngModel)] = "usuario.cui"/>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Contraseña" class="form-control" name="clave" [(ngModel)] = "usuario.clave"/>
+          </div>
+          <hr/>
+          <input type="submit" class="btn btn-default btn-block" value="Registrarse"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

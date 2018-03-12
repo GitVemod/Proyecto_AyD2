@@ -1,0 +1,17 @@
+<br/>
+<div class="row justify-content-md-center">
+  <div class="col-sm-4">
+    <form (ngSubmit) = "iniciarSesion()">
+      <div class="form-group">
+        <input type="text" placeholder="Correo" class="form-control" name="correo" [(ngModel)] = "usuario.correo"/>
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Contraseña" class="form-control" name="clave" [(ngModel)] = "usuario.clave"/>
+      </div>
+      <hr/>
+      <input type="submit" class="btn btn-success btn-block" value="Iniciar sesion"/>
+      <br/>
+    </form>
+      <a href="/registrarse"><input type="submit" class="btn btn-default btn-block" value="Registrarse"/></a>
+  </div>
+</div>
