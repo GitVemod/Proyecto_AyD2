@@ -20,6 +20,8 @@ import { PrincipalComponent } from './componentes/principal/principal.component'
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
+import { TransferenciaComponent } from './componentes/transferencia/transferencia.component';
+import { SaldoComponent } from './componentes/saldo/saldo.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     PrincipalComponent,
     NavbarComponent,
     NosotrosComponent,
-    InicioComponent
+    InicioComponent,
+    TransferenciaComponent,
+    SaldoComponent
   ],
   imports: [
     RouterModule.forRoot([

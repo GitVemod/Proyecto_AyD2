@@ -4,16 +4,14 @@ import { FbUsuarioServiceService } from '../../servicios/fb-usuario-service.serv
 import { Usuario } from '../../modelos/usuario';
 
 @Component({
-  selector: 'app-principal',
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  selector: 'app-transferencia',
+  templateUrl: './transferencia.component.html',
+  styleUrls: ['./transferencia.component.css']
 })
-export class PrincipalComponent implements OnInit {
-  usuarioIniciado : Usuario;
+export class TransferenciaComponent implements OnInit {
+  id:string;
   usuarios:Usuario[];
-  id : string;
-  constructor(private route:ActivatedRoute, public usuarioService:FbUsuarioServiceService) {
-  }
+  constructor(private route:ActivatedRoute, public usuarioService:FbUsuarioServiceService) { }
 
   ngOnInit() {
     this.usuarioService.getUsuarios().subscribe( usuarios => {
@@ -21,10 +19,11 @@ export class PrincipalComponent implements OnInit {
     });
 
     this.route.paramMap.subscribe(parametrosURL => {
-      this.id = parametrosURL.get('id');
+      this.id = parametrosURL.get('id') + " DESDE TRANSFERENCIA";
       if(this.usuarios){
         console.log("hay usuarios");
       }
     });
   }
+
 }
