@@ -1,3 +1,17 @@
-<p>
-  {{id}}
-</p>
+<h5>
+  Transferencia a terceros
+</h5>
+
+
+<input type="text" placeholder="Cuenta" class="form-control" 
+name="cuentaBase" [(ngModel)] = "textCuenta"/>
+
+
+<input type="text" placeholder="Cantidad de Dinero" class="form-control" 
+name="dinero" [(ngModel)] = "textDinero"/>
+
+
+<input type="text" placeholder="Cuenta de tercero" class="form-control" 
+name="cuentaTercero" [(ngModel)] = "textCuentaTercero"/>
+
+<button (click)="myFunc()" class="btn btn-info">Realizar transferencia</button>

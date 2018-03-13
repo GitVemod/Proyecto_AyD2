@@ -20,9 +20,11 @@ export class InicioComponent implements OnInit {
     this.usuarioService.getUsuarios().subscribe( usuarios => {
       this.usuarios = usuarios;
     })
+
   }
 
   iniciarSesion(){
+    
     if(this.usuario.correo != '' &&  this.usuario.clave != ''){
       //var clave = hashSync(this.usuario.clave, genSaltSync(5));
       //console.log(this.usuario.clave + 'Convertica con bcrypt = ' + clave);
@@ -31,6 +33,7 @@ export class InicioComponent implements OnInit {
       this.usuarios.forEach(element => {
         if(element.correo == this.usuario.correo && element.clave == this.usuario.clave && !encontrado){
           usuarioInicio = element;
+          this.usuarioService.usuarioIniciado = element;
           encontrado = true;
         }
       });

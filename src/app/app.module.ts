@@ -22,6 +22,7 @@ import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { TransferenciaComponent } from './componentes/transferencia/transferencia.component';
 import { SaldoComponent } from './componentes/saldo/saldo.component';
+import { AddCountComponent } from './add-count/add-count.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SaldoComponent } from './componentes/saldo/saldo.component';
     NosotrosComponent,
     InicioComponent,
     TransferenciaComponent,
-    SaldoComponent
+    SaldoComponent,
+    AddCountComponent
   ],
   imports: [
     RouterModule.forRoot([

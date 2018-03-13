@@ -1,13 +1,24 @@
 <div class="row justify-content-md-center">
-  <div class="col-sm-5">
-    <h4>Bienvenido {{id}}</h4>
-  </div>
+
+    <h3>Bienvenido {{name}}</h3>
+
 </div>
-<div class="row justify-content-md-center">
-  <div class="col-sm-7">
-    <app-saldo></app-saldo>
-  </div>
-  <div class="col-sm-4">
-    <app-transferencia></app-transferencia>
-  </div>
+<h4>Que deseas realizar:</h4>
+<br/>
+
+
+<button (click)="show1()" class="btn btn-info">Agregar cuenta</button>
+<button (click)="show2()" class="btn btn-info">Realizar transferencia</button>
+<button (click)="show3()" class="btn btn-info">Visualizar cuentas</button>
+
+<div *ngIf="showForm1" class="wrapper">
+  <app-add-count></app-add-count>
+</div>
+
+<div *ngIf="showForm2" class="wrapper">
+  <app-transferencia></app-transferencia>
+</div>
+
+<div *ngIf="showForm3" class="wrapper">
+  <app-saldo></app-saldo>
 </div>

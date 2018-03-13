@@ -20,7 +20,9 @@ export class FbUsuarioServiceService {
   //cada uno de los datos encontrados dentro del documento
   usuarios: Observable<Usuario[]>;
   usuario:Usuario;
+  usuarioIniciado : Usuario;
 
+  
   constructor(public afs:AngularFirestore) {
     this.colUsuarios = this.afs.collection('usuarios');
     //se mantiene escuchando para obtener los nuevos cambios en la base da datos
