@@ -4,6 +4,8 @@
 
 
 <input type="text" placeholder="Cuenta" class="form-control" 
-name="cuentaBase" [(ngModel)] = "textCuenta"/>
+name="cuentaBase" [(ngModel)] = "cuenta.noCuenta"/>
 
-<button (click)="myFunc()" class="btn btn-info">Agregar cuenta</button>
+<button (click)="registrarCuenta()" class="btn btn-info">Agregar cuenta</button>
+
+<button (click)="verCuentas()" class="btn btn-info">Ver Cuentas</button>

@@ -5,5 +5,4 @@ export interface Usuario{
     correo ?: string;
     cui ?: string;
     clave ?: string;
-    
 }

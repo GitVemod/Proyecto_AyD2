@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { RouterModule, Routes} from '@angular/router';
 
 import { FbUsuarioServiceService } from './servicios/fb-usuario-service.service';
+import {CuentaServiceService} from './servicios/cuenta-service.service'
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -22,7 +23,7 @@ import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { TransferenciaComponent } from './componentes/transferencia/transferencia.component';
 import { SaldoComponent } from './componentes/saldo/saldo.component';
-import { AddCountComponent } from './add-count/add-count.component';
+import { AddCountComponent } from './componentes/add-count/add-count.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { AddCountComponent } from './add-count/add-count.component';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  providers: [ FbUsuarioServiceService],
+  providers: [ FbUsuarioServiceService , CuentaServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
