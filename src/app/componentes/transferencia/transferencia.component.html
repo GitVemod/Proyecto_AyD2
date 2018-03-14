@@ -1,17 +1,43 @@
-<h5>
+<br><h5>
   Transferencia a terceros
 </h5>
 
-
-<input type="text" placeholder="Cuenta" class="form-control" 
+<!--
+<input readonly type="text" placeholder="Cuenta" class="form-control" 
 name="cuentaBase" [(ngModel)] = "textCuenta"/>
-
-
+-->
+Sus Cuentas:
+<select [(ngModel)]="textCuenta">
+  <option *ngFor="let cuenta of cuentasUser" value="{{cuenta.noCuenta}}">
+    {{ cuenta.noCuenta }}
+  </option>
+</select>
+<br>Catidad:
 <input type="text" placeholder="Cantidad de Dinero" class="form-control" 
 name="dinero" [(ngModel)] = "textDinero"/>
-
-
+Cuenta de tercero:
 <input type="text" placeholder="Cuenta de tercero" class="form-control" 
 name="cuentaTercero" [(ngModel)] = "textCuentaTercero"/>
 
-<button (click)="myFunc()" class="btn btn-info">Realizar transferencia</button>
+<button (click)="realizarTrasfer()" class="btn btn-info">Revisar transferencia</button>
+
+<div *ngIf="showForm12" class="wrapper">
+  <br><br><h5>
+        Confirmar Transferencia
+    </h5>
+  <br>Cuenta:
+  <input readonly type="text" placeholder="Cuenta" class="form-control" 
+  name="dinero" [(ngModel)] = "textCuenta"/>
+  <br>Cuenta de tercero:
+  <input  readonly ="text" placeholder="Cuenta de tercero" class="form-control" 
+  name="cuentaTercero" [(ngModel)] = "textCuentaTercero"/> 
+  <br>Saldo restante:
+  <input readonly type="text" placeholder="Saldo Restante" class="form-control" 
+  name="dinero" [(ngModel)] = "textSaldo"/>
+  <button (click)="confirmTrasfer()" class="btn btn-info">Confirmar transferencia</button> 
+  <button (click)="cancelTrasfer()" class="btn btn-danger">Cancelar</button> 
+  
+  
+  <br><br>
+</div>
+

@@ -6,6 +6,10 @@
 <input type="text" placeholder="Cuenta" class="form-control" 
 name="cuentaBase" [(ngModel)] = "cuenta.noCuenta"/>
 
-<button (click)="registrarCuenta()" class="btn btn-info">Agregar cuenta</button>
+<select [(ngModel)]="bancoSelected">
+  <option *ngFor="let banco of bancos" value="{{banco}}">
+    {{ banco }}
+  </option>
+</select>
 
-<button (click)="verCuentas()" class="btn btn-info">Ver Cuentas</button>
+<button (click)="registrarCuenta()" class="btn btn-info">Agregar cuenta</button>

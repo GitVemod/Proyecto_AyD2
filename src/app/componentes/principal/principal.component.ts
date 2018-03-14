@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FbUsuarioServiceService } from '../../servicios/fb-usuario-service.service';
 import { Usuario } from '../../modelos/usuario';
+import { CuentaServiceService } from '../../servicios/cuenta-service.service';
+import { Cuenta } from '../../modelos/cuenta';
 
 @Component({
   selector: 'app-principal',
@@ -12,16 +14,21 @@ export class PrincipalComponent implements OnInit {
   showForm1: boolean;
   showForm2: boolean;
   showForm3: boolean;
-  
+
   usuarios:Usuario[];
   id : string;
   name : string;
-  constructor(private route:ActivatedRoute, public usuarioService:FbUsuarioServiceService) {
+  constructor(private route:ActivatedRoute, public usuarioService:FbUsuarioServiceService,
+    public cuentaservice : CuentaServiceService ) {
   }
 
   ngOnInit() {
     this.usuarioService.getUsuarios().subscribe( usuarios => {
       this.usuarios = usuarios;
+    });
+
+    this.cuentaservice.getCuentas().subscribe( cuentas => {
+     this.cuentaservice.cuentasArregloGlobal = cuentas;
     });
 
     this.route.paramMap.subscribe(parametrosURL => {
@@ -50,7 +57,6 @@ export class PrincipalComponent implements OnInit {
 
 
   show1(){
-    console.log(this.getRandomSpan());
     this.showForm2 = false;
     this.showForm3 = false;
     if(this.showForm1){
@@ -62,7 +68,7 @@ export class PrincipalComponent implements OnInit {
   }
 
   show2(){
-    console.log(this.getRandomSpan());
+
     this.showForm1 = false;
     this.showForm3 = false;
     if(this.showForm2){
@@ -74,7 +80,7 @@ export class PrincipalComponent implements OnInit {
   }
 
   show3(){
-    console.log(this.getRandomSpan());
+
     this.showForm2 = false;
     this.showForm1 = false;
     if(this.showForm3){

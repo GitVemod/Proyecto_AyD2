@@ -22,7 +22,7 @@ docCuenta: AngularFirestoreDocument<Cuenta>;
 Cuentas: Observable<Cuenta[]>;
 Cuenta:Cuenta;
 CuentaIniciado : Cuenta;
-
+cuentasArregloGlobal:Cuenta[];
 
 constructor(public afs:AngularFirestore) {
   this.colCuentas = this.afs.collection('cuentas');
@@ -71,5 +71,7 @@ getCuenta(id:string){
   });
   return this.Cuenta;
 }
+
+
 
 }

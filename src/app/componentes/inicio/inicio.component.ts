@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelos/usuario';
 import { FbUsuarioServiceService } from '../../servicios/fb-usuario-service.service';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',

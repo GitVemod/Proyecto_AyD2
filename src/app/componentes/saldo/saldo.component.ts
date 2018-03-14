@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelos/usuario';
 import { ActivatedRoute } from '@angular/router';
 import { FbUsuarioServiceService } from '../../servicios/fb-usuario-service.service';
+import { CuentaServiceService } from '../../servicios/cuenta-service.service';
+import { Cuenta } from '../../modelos/cuenta';
 
 @Component({
   selector: 'app-saldo',
@@ -9,21 +11,36 @@ import { FbUsuarioServiceService } from '../../servicios/fb-usuario-service.serv
   styleUrls: ['./saldo.component.css']
 })
 export class SaldoComponent implements OnInit {
-
+  cuentasUser: Cuenta[] = [];
   id:string;
   usuarios:Usuario[];
-  constructor(private route:ActivatedRoute, public usuarioService:FbUsuarioServiceService) { }
+  textCuenta:number  = 0 ;
+  cuenta1: Cuenta = { id: '', descripcion: '', saldo:0, noCuenta:0, idUser: ''};
+  constructor(private route:ActivatedRoute, public usuarioService:FbUsuarioServiceService,
+    public cuentasCorriendo:CuentaServiceService) { }
 
   ngOnInit() {
-    this.usuarioService.getUsuarios().subscribe( usuarios => {
-      this.usuarios = usuarios;
-    });
-
-    this.route.paramMap.subscribe(parametrosURL => {
-      this.id = parametrosURL.get('id') + " DESDE SALDO";
-      if(this.usuarios){
-        console.log("hay usuarios");
+    this.cuentasCorriendo.cuentasArregloGlobal.forEach(element =>{
+      if(element.idUser == this.usuarioService.usuarioIniciado.id){
+        this.cuentasUser.push(element);
       }
-    });
+  });
+}
+
+ver(){
+  if(this.textCuenta!=0){
+    this.traerCuenta1(this.textCuenta);
+  }  else{
+    alert('Seleccione una cuenta');
   }
+}
+
+traerCuenta1(noCuenta: number){
+  this.cuentasCorriendo.cuentasArregloGlobal.forEach(element =>{
+    if(element.noCuenta == noCuenta){
+      this.cuenta1 = element;
+    }
+});
+}
+
 }

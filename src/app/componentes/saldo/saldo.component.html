@@ -1,4 +1,21 @@
-<button (click) = "buscarUsuario()">
- Saldo xd xd {{id}}
-</button>
+<br>
+<h5>
+        Visualizar cuentas
+      </h5>
+      
+      <select [(ngModel)]="textCuenta">
+        <option *ngFor="let cuenta of cuentasUser" value="{{cuenta.noCuenta}}">
+          {{ cuenta.noCuenta }}
+        </option>
+      </select>
   
+      <button (click)="ver()" class="btn btn-info">Ver</button> 
+  
+      <br>
+      <br>Saldo:
+      <input type="text" placeholder="Saldo" class="form-control" 
+      name="dinero" [(ngModel)] = "cuenta1.saldo"/>
+      Descripción:
+      <input type="text" placeholder="Descripción" class="form-control" 
+      name="cuentaTercero" [(ngModel)] = "cuenta1.descripcion"/>
+      
